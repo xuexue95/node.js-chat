@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 all">
+
+            <!-- 信息区域 -->
+            <div class="col-md-9 m-left">
+
+                <!-- 内容显示 -->
+                <div id="content">
+
+                
+                </div>
+
+
+                <!-- 内容发送 -->
+                <div id="input">
+                    <div class="col-md-10">
+                        <textarea name="message" class="form-control"></textarea>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="send" class="btn btn-primary">发送</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 用户区域 -->
+            <div class="col-md-3 m-right users">
+                <ul class="list-unstyled">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="bak">
+        <!-- 用户列表模板 -->
+        <li class="item">
+            <div class="col-md-4"><img class="img-responsive" src="holder.js/50x50" alt=""></div>
+            <div class="col-md-8">
+                <h4>lisi</h4>
+            </div>
+        </li>
+
+        <!-- 收到消息的模板 -->
+        <div class="media left">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" width="60" src="holder.js/60x60" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">张三</h4>
+            <p>hello world</p>
+          </div>
+        </div>
+
+        <!-- 发送消息的模板 -->
+        <div class="media right">
+          <div class="media-body">
+            <h4 class="media-heading text-right">李四</h4>
+            <p class="text-right">hello world</p>
+          </div>
+          <div class="media-right">
+            <a href="#">
+              <img class="media-object" width="60" src="holder.js/60x60" alt="...">
+            </a>
+          </div>
+        </div>
+    </div>
+    
+    <!-- 模态框 -->
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">欢迎进入聊天室</h4>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">请输入昵称</label>
+                <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">请选择头像</label>
+                <input type="hidden" name="profile">
+                <ul class="list-unstyled" id="profiles">
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/1.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/2.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/3.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/4.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/5.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/6.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/7.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/8.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/9.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/10.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/11.jpg" alt=""></li>
+                    <li class="col-md-2"><img class="img-responsive" src="/profiles/12.jpg" alt=""></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+          <div class="clearfix"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" id="login" class="btn btn-primary">登录</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="/js/main.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>
